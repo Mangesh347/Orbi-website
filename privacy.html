@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- seo:start -->
+  <meta name="description" content="How Orbi handles data: your spaces, tabs, and notes stay in your browser; an account is only needed for Orbi Pro." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://orbi-new-tab-live-wallpapers-shortc.vercel.app/privacy.html" />
+  <meta name="theme-color" content="#05080a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Orbi" />
+  <meta property="og:title" content="Privacy Policy — Orbi" />
+  <meta property="og:description" content="How Orbi handles data: your spaces, tabs, and notes stay in your browser; an account is only needed for Orbi Pro." />
+  <meta property="og:url" content="https://orbi-new-tab-live-wallpapers-shortc.vercel.app/privacy.html" />
+  <meta property="og:image" content="https://orbi-new-tab-live-wallpapers-shortc.vercel.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Orbi new tab with spaces, a shortcut dock, and an animated wallpaper" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy Policy — Orbi" />
+  <meta name="twitter:description" content="How Orbi handles data: your spaces, tabs, and notes stay in your browser; an account is only needed for Orbi Pro." />
+  <meta name="twitter:image" content="https://orbi-new-tab-live-wallpapers-shortc.vercel.app/assets/og-image.png" />
+  <!-- seo:end -->
+  <title>Privacy Policy — Orbi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand-mark" href="index.html"><span class="orb" aria-hidden="true"></span> Orbi</a>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="site-nav">
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a class="nav-cta" href="index.html#install">Add to Chrome</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-hero">
+      <div class="inner">
+        <p class="section-kicker">Legal</p>
+        <h1>Privacy Policy</h1>
+        <p>How Orbi handles data: your spaces stay in your browser, an account is only needed for Pro, and we never sell personal information.</p>
+      </div>
+    </header>
+
+    <article class="prose">
+      <p class="meta">Last updated: September 28, 2026</p>
+
+      <p>
+        Orbi is a Chrome extension that replaces your New Tab page with a customizable dashboard
+        and adds an on-page dock for shortcuts and open tabs. This policy explains what data Orbi
+        accesses, how it is stored, and what (if anything) leaves your device.
+      </p>
+
+      <div class="callout">
+        <strong>Short version:</strong> Orbi does not collect, sell, or transmit your personal data
+        to any server we operate. Shortcuts, spaces, sessions, wallpapers, and settings stay in
+        your browser’s local extension storage. Outside network requests are limited to favicon
+        lookups and optional Google Fonts loads — never full browsing history, page content for
+        analytics, or an Orbi account profile.
+      </div>
+
+      <h2>Who this applies to</h2>
+      <p>
+        This policy covers the Orbi Chrome extension (including New Tab, popup, options, content
+        dock, and background service worker). The marketing site at this domain may be hosted
+        statically; browsing the marketing pages does not require an Orbi account and we do not
+        run an analytics product that identifies you for advertising.
+      </p>
+
+      <h2>No account required</h2>
+      <p>
+        Orbi does not require sign-in. There is no Orbi cloud backend for syncing your workspace.
+        You may export and import JSON backups yourself from the options page. Those files stay
+        under your control.
+      </p>
+
+      <h2>What data Orbi accesses and stores</h2>
+      <p>To provide its features, Orbi reads or stores the following:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Why</th>
+            <th>Where it goes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Shortcuts (name + URL), pins, folders, space assignments, layout preferences</td>
+            <td>Display and organize your dock and New Tab shortcuts</td>
+            <td>Saved locally via <code>chrome.storage.local</code></td>
+          </tr>
+          <tr>
+            <td>Spaces, sessions, focus rules, notes, todos, read-later items, usage counters</td>
+            <td>Workspaces, restore flows, focus mode, and local productivity tools</td>
+            <td>Saved locally via <code>chrome.storage.local</code> (and related local keys)</td>
+          </tr>
+          <tr>
+            <td>Wallpaper media you upload; clock/date display preferences</td>
+            <td>Personalize New Tab</td>
+            <td>Saved locally; large media may use <code>unlimitedStorage</code></td>
+          </tr>
+          <tr>
+            <td>Titles, URLs, and favicons of currently open tabs</td>
+            <td>Tab command center, switching, session capture</td>
+            <td>In-memory / session flows on your device; not sent to Orbi servers</td>
+          </tr>
+          <tr>
+            <td>Visible-tab screenshot previews (<code>captureVisibleTab</code>)</td>
+            <td>Live thumbnails in the tab preview panel</td>
+            <td>Held temporarily in the extension background process; not sold or uploaded to Orbi</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Chrome permissions explained</h2>
+      <ul>
+        <li><code>storage</code> / <code>unlimitedStorage</code> — persist spaces, shortcuts, sessions, wallpapers, and settings on your device.</li>
+        <li><code>tabs</code> — list and manage tabs (search, mute, pin, discard/hibernate, session save/restore).</li>
+        <li><code>alarms</code> — scheduled session snapshots and focus timer checks.</li>
+        <li><code>host_permissions</code> for <code>&lt;all_urls&gt;</code> — required so the content dock can run on pages you visit, so favicons can be fetched, and so <code>chrome.tabs.captureVisibleTab</code> can generate tab preview thumbnails. Orbi does not use this to scrape page content for advertising or to build a cross-site profile on our servers.</li>
+      </ul>
+
+      <h2>Orbi Pro: your account and purchases</h2>
+      <p>
+        Orbi’s free features never contact our servers and need no account. If you upgrade to <strong>Orbi Pro</strong>:
+      </p>
+      <ul>
+        <li><strong>Google sign-in.</strong> You sign in with Google on our website. Our account provider, <strong>Supabase</strong>, receives your Google <strong>name, email address, and profile picture</strong>. We store these with your plan (Free or Pro), plan length, end date, and the country your connection comes from (used for tax and currency).</li>
+        <li><strong>Checkout</strong> happens on our website through <strong>PayPal</strong> or, in India, <strong>Razorpay</strong>. They process your payment details under their own privacy policies. We never see or store your card, UPI, or bank details. We keep each order’s provider ID, amount, tax, currency, and status, plus a <strong>salted one-way hash</strong> of your IP address for fraud checks. The IP address itself is never stored.</li>
+        <li><strong>How Orbi checks your plan.</strong> The Orbi extension asks our website which plan your signed-in account has. Your sign-in stays in a secure, HttpOnly cookie on our website; the extension never receives or stores passwords, tokens, or payment details, and it keeps the answer only in memory. Your spaces, tabs, shortcuts, history, and notes are never sent.</li>
+        <li>If you uninstall Orbi, Chrome opens a short, optional, anonymous survey. It sends only the answer you pick, any text you type, and the Orbi version.</li>
+      </ul>
+      <p>To delete your account and purchase records (after any refund window closes), email us at the address below.</p>
+
+      
+<h2>Third-party network requests</h2>
+      <p>
+        Orbi does not operate a telemetry or ad network. Limited third-party requests may occur:
+      </p>
+      <ul>
+        <li>
+          <strong>Favicons</strong> — when showing a shortcut icon, Orbi may request icons from the
+          site itself, Google’s favicon service (<code>google.com/s2/favicons</code>), or DuckDuckGo’s
+          icon service (<code>icons.duckduckgo.com</code>). These requests typically include a domain
+          name, not your full browsing history or an Orbi user ID.
+        </li>
+        <li>
+          <strong>Google Fonts</strong> — New Tab and options may load font CSS from
+          <code>fonts.googleapis.com</code> / <code>fonts.gstatic.com</code> so clock faces and UI
+          type render correctly. Your browser’s standard font-CDN request behavior applies.
+        </li>
+      </ul>
+      <p>
+        We do not sell or rent your personal information. We do not share your shortcuts, tab lists,
+        or screenshots with data brokers.
+      </p>
+
+      <h2>Analytics and advertising</h2>
+      <p>
+        The Orbi extension does not include a third-party analytics SDK for behavioral advertising,
+        and it does not sell data to advertisers. If a future version introduces optional telemetry,
+        this policy will be updated before that ships.
+      </p>
+
+      <h2>What Orbi does not do</h2>
+      <ul>
+        <li>Does not require an Orbi account or cloud login.</li>
+        <li>Does not sell your personal data.</li>
+        <li>Does not track you across the web for advertising.</li>
+        <li>Does not use your data for creditworthiness or lending decisions.</li>
+        <li>Does not upload page body content to Orbi-operated servers for analysis.</li>
+      </ul>
+
+      <h2>Data retention and deletion</h2>
+      <p>
+        Local data remains in your Chrome profile while Orbi is installed. Uninstalling the
+        extension or clearing extension storage permanently removes that local data. Tab metadata
+        and visible-tab screenshots used for previews are not intended as a long-term archive —
+        they exist to power UI while you use the panel and are cleared with normal browser/session
+        lifecycle.
+      </p>
+
+      <h2>Children’s privacy</h2>
+      <p>
+        Orbi is not directed at children under 13. We do not knowingly collect personal information
+        from children. If you believe a child has provided personal information through a mechanism
+        we control, contact us and we will take appropriate steps.
+      </p>
+
+      <h2>International users</h2>
+      <p>
+        Because Orbi stores data locally on your device, processing for core features happens on
+        your machine. Favicon and font requests may reach third-party CDNs in other regions under
+        those providers’ terms.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        If Orbi’s data practices change, we will update this page and revise the “Last updated”
+        date above. Material changes will be reflected in the extension package’s privacy document
+        as well when published to the Chrome Web Store.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about privacy:
+        <a href="mailto:privacy@orbi.app">privacy@orbi.app</a>
+        (placeholder — replace with your monitored inbox before store launch).
+        You can also use the <a href="support.html">support page</a>.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div>
+        <p class="footer-brand">Orbi<span>.</span></p>
+        <p>Local-first spaces, dock, and tabs for Chrome.</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="refund.html">Refunds</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Orbi. Built for Chrome.</p>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

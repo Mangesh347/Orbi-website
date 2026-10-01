@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- seo:start -->
+  <meta name="robots" content="noindex, nofollow" />
+  <!-- seo:end -->
+  <title>Checkout · Orbi Pro</title>
+  <meta name="description" content="Upgrade to Orbi Pro. Pay with PayPal, or with UPI and cards in India. Tax is shown before you pay." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
+</head>
+<body class="checkout-body">
+  <a class="skip-link" href="#main">Skip to checkout</a>
+
+  <main id="main" class="co-shell">
+    <div class="co-card" id="coCard" aria-busy="true">
+      <!-- ============ Left: what you're buying ============ -->
+      <section class="co-summary" aria-labelledby="coProduct">
+        <a class="co-home" href="index.html">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Home
+        </a>
+
+        <div class="co-brand">
+          <img src="assets/orbi-logo.svg" alt="" width="44" height="44" />
+          <div>
+            <h1 id="coProduct">Orbi Pro</h1>
+            <p>Every space you need, in one calm new tab.</p>
+          </div>
+        </div>
+
+        <p class="co-total" aria-live="polite">
+          <span class="co-total-amount" id="coTotal"><span class="sk sk-total"></span></span>
+          <span class="co-total-per" id="coPer"></span>
+        </p>
+
+        <p class="co-mode" id="coMode" hidden></p>
+
+        <div class="co-controls">
+          <div class="co-seg" role="radiogroup" aria-label="Currency" id="coCurrency"></div>
+          <div class="co-pills" role="radiogroup" aria-label="Plan length">
+            <button type="button" role="radio" aria-checked="false" data-term="monthly">Monthly</button>
+            <button type="button" role="radio" aria-checked="true" data-term="yearly">Yearly</button>
+            <button type="button" role="radio" aria-checked="false" data-term="lifetime">Lifetime</button>
+          </div>
+        </div>
+
+        <article class="co-item">
+          <div class="co-item-head">
+            <span class="co-item-name" id="coItemName">Orbi Pro · Yearly</span>
+            <span class="co-item-price" id="coItemPrice"></span>
+          </div>
+          <p class="co-item-desc">Research and unlimited spaces, 50 shortcuts per space, every World Escapes scene, Wallpaper Shuffle, and video wallpapers in every space.</p>
+          <p class="co-item-tip" id="coTip"></p>
+        </article>
+
+        <dl class="co-lines">
+          <div><dt>Subtotal</dt><dd id="coSubtotal">—</dd></div>
+          <div><dt id="coTaxLabel">Tax</dt><dd id="coTax">—</dd></div>
+          <div class="co-due"><dt>Total due today</dt><dd id="coDue">—</dd></div>
+        </dl>
+        <p class="co-fine" id="coFine">Pro turns on the moment your payment is confirmed. Nothing renews automatically.</p>
+      </section>
+
+      <!-- ============ Right: how to pay ============ -->
+      <section class="co-pay" aria-labelledby="coPayTitle">
+        <!-- Signed out -->
+        <div class="co-step" id="stepSignin" hidden>
+          <h2 id="coPayTitle">Sign in to upgrade</h2>
+          <p class="co-lede">Your plan is saved to your Google account, so Orbi Pro follows you to every browser where you sign in.</p>
+          <a class="co-google" id="googleBtn" href="/api/auth/login">
+            <svg viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.97 10.72A5.4 5.4 0 0 1 3.68 9c0-.6.1-1.18.29-1.72V4.95H.96A9 9 0 0 0 0 9c0 1.45.35 2.83.96 4.05l3.01-2.33z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"/></svg>
+            Continue with Google
+          </a>
+          <p class="co-note">We only use your name and email. No password to remember.</p>
+        </div>
+
+        <!-- Signed in: choose how to pay -->
+        <div class="co-step" id="stepPay" hidden>
+          <div class="co-account" id="coAccount">
+            <img id="coAvatar" alt="" width="32" height="32" referrerpolicy="no-referrer" hidden />
+            <div>
+              <span class="co-account-name" id="coName"></span>
+              <span class="co-account-plan" id="coPlanNow"></span>
+            </div>
+            <button type="button" class="co-link" id="signOutBtn">Sign out</button>
+          </div>
+
+          <h2>How would you like to pay?</h2>
+
+          <button type="button" class="co-paypal" id="paypalBtn" hidden>
+            <span class="co-btn-label"><b>Pay</b><i>Pal</i></span>
+            <span class="co-btn-sub" id="paypalSub"></span>
+          </button>
+
+          <button type="button" class="co-razorpay" id="razorpayQuick" hidden>
+            <span class="co-btn-label">Razorpay</span>
+            <span class="co-btn-sub">UPI · RuPay · cards · netbanking</span>
+          </button>
+
+          <div class="co-divider" id="coDivider" hidden><span>or pay with card / UPI</span></div>
+
+          <div class="co-rzp-block" id="rzpBlock" hidden>
+            <label class="co-label" for="billingEmail">Billing email</label>
+            <input class="co-input" id="billingEmail" type="email" autocomplete="email" inputmode="email" spellcheck="false" />
+            <div class="co-info">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 8.5h14" stroke="currentColor" stroke-width="1.5"/></svg>
+              <div>
+                <strong>Card or UPI (Razorpay)</strong>
+                <p>Opens a secure Razorpay window. Pay with UPI apps, RuPay, Visa, Mastercard, or netbanking.</p>
+              </div>
+            </div>
+            <button type="button" class="co-continue" id="razorpayBtn">Continue with card / UPI</button>
+          </div>
+
+          <p class="co-unavailable" id="noProviders" hidden>Checkout opens soon in your region. Write to <a href="mailto:hello@orbi.app">hello@orbi.app</a> and we'll set you up.</p>
+          <p class="co-error" id="coError" role="alert" hidden></p>
+        </div>
+
+        <!-- Working -->
+        <div class="co-step co-center" id="stepWorking" hidden>
+          <div class="co-spinner" aria-hidden="true"></div>
+          <h2 id="workingTitle">Confirming your payment…</h2>
+          <p class="co-lede" id="workingText">This takes a few seconds. Please keep this page open.</p>
+        </div>
+
+        <!-- Done -->
+        <div class="co-step co-center" id="stepDone" hidden>
+          <div class="co-done-orb" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h2>You're on Orbi Pro.</h2>
+          <p class="co-lede" id="doneText"></p>
+          <p class="co-note" id="doneSync">Orbi updates on its own. Open a new tab to see every space unlocked.</p>
+          <a class="co-continue" href="index.html">Done</a>
+        </div>
+
+        <footer class="co-foot">
+          <p><span class="co-foot-brand">Checkout · Orbi</span> · pay, verify, then Pro unlocks</p>
+          <p class="co-legal">By paying you agree to the <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refunds</a></p>
+        </footer>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/checkout.js"></script>
+</body>
+</html>

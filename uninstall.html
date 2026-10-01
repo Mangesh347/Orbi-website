@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- seo:start -->
+  <meta name="robots" content="noindex, nofollow" />
+  <!-- seo:end -->
+  <title>Orbi removed — one quick question</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/site.css" />
+  <link rel="stylesheet" href="css/pricing.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="inner">
+      <a class="brand-mark" href="index.html"><span class="orb" aria-hidden="true"></span> Orbi</a>
+    </div>
+  </header>
+
+  <main id="main" class="doc-page pricing-main">
+    <div class="inner">
+      <h1>Orbi is removed.</h1>
+      <p>Your spaces and shortcuts were stored only in your browser, so they were removed along with Orbi. If you exported a backup, you can import it any time you come back.</p>
+
+      <section class="cleanup-card" aria-labelledby="cleanupHeading">
+        <h2 id="cleanupHeading">Clean up leftover tab groups</h2>
+        <p>Chrome saves a copy of every tab group to the bookmarks bar (for example "Personal · 4"). Chrome keeps these, not Orbi, so they stay after removal. To clear them:</p>
+        <ol>
+          <li><strong>Hide them all at once:</strong> open Chrome <strong>Settings → Appearance</strong> and turn off <strong>Show tab groups in bookmarks bar</strong>.</li>
+          <li><strong>Or delete them one by one:</strong> right-click a group in the bookmarks bar → <strong>Delete group</strong>.</li>
+        </ol>
+      </section>
+
+      <form id="feedbackForm">
+        <h2 id="reasonHeading">What made you remove it? <span style="color: var(--fog); font-weight: 400;">(optional, anonymous)</span></h2>
+        <div class="reason-grid" role="radiogroup" aria-labelledby="reasonHeading">
+          <label><input type="radio" name="reason" value="too-slow" /> It slowed Chrome down</label>
+          <label><input type="radio" name="reason" value="missing-feature" /> It was missing something I need</label>
+          <label><input type="radio" name="reason" value="confusing" /> It was hard to figure out</label>
+          <label><input type="radio" name="reason" value="bug" /> Something broke</label>
+          <label><input type="radio" name="reason" value="pricing" /> Pro costs too much</label>
+          <label><input type="radio" name="reason" value="switched" /> I switched to another tool</label>
+          <label><input type="radio" name="reason" value="temporary" /> Just reinstalling</label>
+          <label><input type="radio" name="reason" value="other" /> Something else</label>
+        </div>
+        <label for="detail" class="key-label">Anything we should fix?</label>
+        <textarea id="detail" class="feedback-text" maxlength="1000" placeholder="e.g. I wanted my spaces on my laptop too"></textarea>
+        <div class="cta-row" style="margin-top: 16px;">
+          <button class="btn btn-primary" type="submit" id="sendBtn">Send feedback</button>
+          <a class="btn btn-ghost" href="https://chromewebstore.google.com/detail/mlhchpbioeplikcfpmidjjmmdemodjef">Reinstall Orbi</a>
+        </div>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/uninstall.js"></script>
+</body>
+</html>

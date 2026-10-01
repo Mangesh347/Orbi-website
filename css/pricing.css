@@ -1,0 +1,613 @@
+/* Orbi pricing + checkout — builds on site.css tokens (ink / teal, Sora + Fraunces). */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.pricing-main .inner {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+}
+
+.pricing-hero {
+  padding: calc(var(--nav-h) + 64px) 0 32px;
+  background: radial-gradient(640px 360px at 50% 0%, rgba(0, 212, 184, 0.12), transparent 60%), var(--ink-0);
+  text-align: center;
+}
+
+.pricing-hero .section-lede {
+  margin: 0 auto;
+  max-width: 56ch;
+}
+
+.pricing-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin: 0 auto 16px;
+  max-width: 20ch;
+}
+
+.pricing-plans {
+  padding: 16px 0 64px;
+}
+
+/* —— Segmented radio controls —— */
+.pricing-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.segmented {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--ink-2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.segmented button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--fog);
+  font: 600 0.9rem/1 var(--font);
+  cursor: pointer;
+  transition: background 120ms ease-out, color 120ms ease-out;
+}
+
+.segmented button:hover {
+  color: var(--paper);
+}
+
+.segmented button[aria-checked="true"] {
+  background: #10302c;
+  color: #eafffb;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.segmented button:focus-visible,
+.plan-card .btn:focus-visible,
+.faq summary:focus-visible,
+.key-row .btn:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.segmented-sm button {
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.save-chip {
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--teal);
+  font: 500 0.7rem/1 var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+/* —— Plan cards —— */
+.plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 24px;
+  max-width: 880px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: var(--radius);
+  background: var(--ink-1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.plan-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--mist);
+}
+
+.plan-price {
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.plan-price .amount {
+  font-size: 3.2rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.plan-price .currency {
+  font-size: 1.6rem;
+  color: var(--mist);
+}
+
+.plan-price .per {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--fog);
+  margin-left: 4px;
+}
+
+.plan-sub {
+  margin: 8px 0 24px;
+  color: var(--fog);
+  font-size: 0.9rem;
+  min-height: 1.4em;
+}
+
+.plan-list {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  flex: 1;
+}
+
+.plan-list li {
+  position: relative;
+  padding-left: 24px;
+  color: var(--mist);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.plan-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #7dffee, var(--teal) 50%, #007a6c);
+}
+
+.plan-free .plan-list li::before {
+  background: var(--ink-3);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.plan-list strong {
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.plan-cta {
+  width: 100%;
+}
+
+/* Signature: Pro card sits inside a slow orbit ring — the same orb as the Orbi mark. */
+.plan-pro {
+  background: linear-gradient(180deg, #0d1a1c, var(--ink-1) 55%);
+  border-color: transparent;
+  isolation: isolate;
+}
+
+.plan-pro .pro-halo {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: calc(var(--radius) + 1px);
+  padding: 1px;
+  background: conic-gradient(from var(--orbit, 0deg), rgba(0, 212, 184, 0.9), rgba(91, 140, 255, 0.35) 25%, rgba(0, 212, 184, 0.08) 50%, rgba(91, 140, 255, 0.35) 75%, rgba(0, 212, 184, 0.9));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: orbit 9s linear infinite;
+}
+
+@property --orbit {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes orbit {
+  to {
+    --orbit: 360deg;
+  }
+}
+
+.plan-flag {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--teal);
+  font: 500 0.7rem/1.4 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* —— Checkout —— */
+.checkout {
+  display: grid;
+  gap: 8px;
+}
+
+.pay-hint {
+  margin: 8px 0 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--fog);
+}
+
+.btn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn.is-loading .btn-label::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  vertical-align: -2px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.paypal-buttons {
+  min-height: 48px;
+}
+
+.skeleton-btn {
+  height: 44px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ink-2), var(--ink-3), var(--ink-2));
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.checkout-error {
+  margin: 8px 0 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: rgba(255, 107, 122, 0.1);
+  border: 1px solid rgba(255, 107, 122, 0.3);
+  color: #ffb3bb;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.pricing-footnote {
+  max-width: 60ch;
+  margin: 32px auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--fog);
+}
+
+/* —— Success —— */
+.pricing-success {
+  padding: 0 0 64px;
+}
+
+.success-card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px 32px 32px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #0d1a1c, var(--ink-1));
+  border: 1px solid var(--teal-line);
+  text-align: center;
+}
+
+.success-orb {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #7dffee 0%, var(--teal) 42%, #007a6c 100%);
+  box-shadow: 0 0 0 8px rgba(0, 212, 184, 0.08), 0 0 48px rgba(0, 212, 184, 0.45);
+  animation: bloom 700ms cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes bloom {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+}
+
+.success-card h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.success-status {
+  margin: 0 0 24px;
+  color: var(--fog);
+}
+
+.success-status.is-ok {
+  color: var(--teal);
+}
+
+.key-label {
+  display: block;
+  text-align: left;
+  font: 500 0.75rem/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fog);
+  margin-bottom: 8px;
+}
+
+.key-row {
+  display: flex;
+  gap: 8px;
+}
+
+.key-out {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--ink-0);
+  color: var(--paper);
+  font: 500 0.95rem/1.2 var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.key-row .btn {
+  padding: 12px 16px;
+  white-space: nowrap;
+}
+
+.success-meta {
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+  color: var(--fog);
+  text-align: left;
+}
+
+.success-steps {
+  margin: 16px 0 0;
+  padding-left: 20px;
+  text-align: left;
+  color: var(--mist);
+}
+
+.success-note {
+  margin: 24px 0 0;
+  font-size: 0.85rem;
+  color: var(--fog);
+}
+
+/* —— FAQ —— */
+.faq {
+  display: grid;
+  gap: 8px;
+  max-width: 760px;
+  margin-top: 24px;
+}
+
+.faq details {
+  border-radius: 10px;
+  background: var(--ink-1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  padding: 16px 20px;
+  font-weight: 600;
+  list-style: none;
+  border-radius: 10px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  flex-shrink: 0;
+  color: var(--teal);
+  font-family: var(--font-mono);
+}
+
+.faq details[open] summary::after {
+  content: "–";
+}
+
+.faq details p {
+  margin: 0;
+  padding: 0 20px 16px;
+  color: var(--fog);
+}
+
+/* —— Simple content pages (refund, uninstall) —— */
+.doc-page {
+  padding: calc(var(--nav-h) + 48px) 0 96px;
+}
+
+.doc-page .inner {
+  max-width: 720px;
+}
+
+.doc-page h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.03em;
+  margin: 0 0 16px;
+}
+
+.doc-page h2 {
+  font-size: 1.15rem;
+  margin: 32px 0 8px;
+}
+
+.doc-page p,
+.doc-page li {
+  color: var(--mist);
+}
+
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 24px 0 16px;
+}
+
+.reason-grid label {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: var(--ink-1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.reason-grid label:has(input:checked) {
+  border-color: var(--teal-line);
+  background: #0d1a1c;
+}
+
+.reason-grid input:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.feedback-text {
+  width: 100%;
+  min-height: 96px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: var(--ink-1);
+  color: var(--paper);
+  font: 400 0.95rem/1.5 var(--font);
+  resize: vertical;
+}
+
+.feedback-text:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+
+.form-status {
+  margin: 12px 0 0;
+  color: var(--fog);
+}
+
+@media (max-width: 760px) {
+  .plan-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-pro {
+    order: -1;
+  }
+
+  .plan-card {
+    padding: 24px;
+  }
+
+  .reason-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .key-row {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan-pro .pro-halo,
+  .skeleton-btn,
+  .success-orb,
+  .btn.is-loading .btn-label::before {
+    animation: none;
+  }
+}
+
+.cleanup-card {
+  margin: 24px 0 8px;
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  background: var(--ink-1);
+  border: 1px solid var(--teal-line);
+}
+.cleanup-card h2 { margin-top: 0; }
+.cleanup-card ol { margin: 12px 0 0; padding-left: 20px; display: grid; gap: 8px; color: var(--mist); }
+
+.price-skeleton {
+  display: inline-block;
+  width: 3.5em;
+  height: 0.9em;
+  border-radius: 8px;
+  vertical-align: middle;
+  background: linear-gradient(90deg, rgba(197, 208, 216, 0.08), rgba(197, 208, 216, 0.18), rgba(197, 208, 216, 0.08));
+  background-size: 200% 100%;
+  animation: price-sheen 1.2s ease-in-out infinite;
+}
+@keyframes price-sheen { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@media (prefers-reduced-motion: reduce) { .price-skeleton { animation: none; } }

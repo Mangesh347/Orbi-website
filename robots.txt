@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /checkout.html
+Disallow: /uninstall.html
+
+Sitemap: https://orbi-new-tab-live-wallpapers-shortc.vercel.app/sitemap.xml
